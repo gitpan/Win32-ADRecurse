@@ -20,4 +20,4 @@ requires:
 resources:
   homepage: https://github.com/bingos/win32-adrecurse
   repository: https://github.com/bingos/win32-adrecurse.git
-version: 0.02
+version: 0.04

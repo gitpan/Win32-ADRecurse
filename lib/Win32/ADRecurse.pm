@@ -1,6 +1,6 @@
 package Win32::ADRecurse;
 {
-  $Win32::ADRecurse::VERSION = '0.02';
+  $Win32::ADRecurse::VERSION = '0.04';
 }
 
 #ABSTRACT: recursively examine an Active Directory structure
@@ -51,7 +51,7 @@ Win32::ADRecurse - recursively examine an Active Directory structure
 
 =head1 VERSION
 
-version 0.02
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -88,7 +88,7 @@ version 0.02
         $last = time2str("%Y/%m/%d %T", msqtime2perl( $user->{lastLogonTimestamp} ) );
       };
       $csv->combine( ( map { s/\n/ /g; s/[^[:print:]]+//g; $_ } map { $user->{$_} || '' }
-        qw(sAMAccountName givenName initials sn displayName mail employeeID staffsccSAPUserId
+        qw(sAMAccountName givenName initials sn displayName mail employeeID
            title department company physicalDeliveryOfficeName streetAddress l postalCode) ), $last, $when )
         and print $csv->string(), "\n";
     },

@@ -28,7 +28,7 @@ recurse(
       $last = time2str("%Y/%m/%d %T", msqtime2perl( $user->{lastLogonTimestamp} ) );
     };
     $csv->combine( ( map { s/\n/ /g; s/[^[:print:]]+//g; $_ } map { $user->{$_} || '' }
-      qw(sAMAccountName givenName initials sn displayName mail employeeID staffsccSAPUserId
+      qw(sAMAccountName givenName initials sn displayName mail employeeID
          title department company physicalDeliveryOfficeName streetAddress l postalCode) ), $last, $when )
       and print $csv->string(), "\n";
   },
